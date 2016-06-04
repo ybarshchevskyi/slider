@@ -3,24 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <title>JavaScript_Lessons</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js" defer></script>
     <script src="testing.js" defer></script>
     <style>
-        #container{
+        .container{
             width: 500px;
             height: 500px;
             margin: 0 auto;
+            border: 1px solid red;
+            position: relative;
+            margin-right: 25px;
+            display: inline-block;
         }
         
-        #imagebox{
+        .imagebox{
             width: 130px;
             height: 130px;
             border: 1px solid black;
+            margin: 0 auto;
+            position: absolute;
+            top: 150px;
+            left: 180px;
+        }
+        .row{
+            position: absolute;
+            top: 175px;
+        }
+        .row.left{
+            left: 100px;
+        }.row.right{
+            left: 325px;
         }
     </style>
 </head>
 <body>
-   <div id="container">
-    <img id="imagebox">
+   <div class="container">
+    <img class="imagebox" src="1.png">
+    <img class="row left" src="left.png">
+    <img class="row right" src="right.png">
+    </div>
+  
+   <div class="container">
+    <img class="imagebox" src="1.png">
+    <img row-left class="row left" src="left.png">
+    <img row-right class="row right" src="right.png">
     </div>
 </body>
 </html>
