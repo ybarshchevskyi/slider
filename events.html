@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<button data-action='showModal'>Show Modal</button>
+	<button data-action='alert'>Alert</button>
+	<input type="color" id="bodyColor">
+	<button data-toggle='bodyColor'>body black</button>
+
+	<dialog> I am model <button data-action="hideModal">Close</button></dialog>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+	<script type="text/javascript">
+		var modal = document.getElementsByTagName('dialog')[0];
+		
+
+		$('button').click(function(){
+			var action = {
+				showModal: function(modal){
+					modal.showModal();
+					// alert('asdad');
+				},
+				hideModal: function(modal){
+					modal.close();
+				}	
+			};
+			if(this.hasAttribute('data-action')){
+				var act = $(this).data('action');
+				action[act](modal);
+				// switch(action){
+				// 	case'modal':
+				// 		action.showModal()
+				// 		modal.showModal();
+				// 		break;
+				// 	case"alert":
+				// 		action.alertModal()
+				// 		alert('alert');
+				// 		break;
+				// 	case"closeModal":
+				// 		action.hideModal()
+				// 		modal.close();
+				// 		break;
+				// };	
+			}else if(this.hasAttribute('data-toggle')){
+				var action = $(this).data('toggle');
+				switch(action){
+					case'bodyColor':
+						var color = $('#bodyColor').val();
+						$('body').css('background', color);
+				}
+			}
+		})
+
+		
+	</script>
+</body>
+</html>
