@@ -42,8 +42,6 @@ function getInputFields(form){
     return form.find('input');
 }
 
-
-
 //Функция, которая проверят наличие необходимых значений в полях с required
 
 function checkRequired(field){
@@ -64,7 +62,7 @@ function checkStrings(field){
     }
 }
 
-//Функция, которая проверяте наличие необходимых значений в полях с numbers_only
+//Функция, которая проверяет наличие необходимых значений в полях с numbers_only
 function checkNumbers(field){
     var checking = typeof field.val();
     if(checking!=='number'){
