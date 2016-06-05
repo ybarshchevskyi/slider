@@ -4,9 +4,9 @@ $(document).ready(function(){
 });
 
 /**
- * Функция конструктор дл обьекта с правилами проверки полей
+ * Функция конструктор для обьекта с правилами проверки полей
  *
- * методом выступает анонимная фуркция, принимает обьект JQuery возвращает bool
+ * методом выступает анонимная функция, принимает обьект JQuery возвращает bool
  */
 
 function ValidationRules(){
@@ -26,7 +26,7 @@ function ValidationRules(){
 	}
 }
 /**
- * Фнкция конструктор формы
+ * Функция конструктор формы
  *
  * @property jQueryObject 		form 				форма, с которой работаем
  * @property jQueryObject 		fields 				поля формы, с которой работаем
@@ -34,7 +34,7 @@ function ValidationRules(){
  * @property array 				validationErrors 	массив содержаший поля с ошибками валидации
  *
  * @method init 		вешает перехватчики событий
- * @method checkInp 	проверка едеиничного поля
+ * @method checkInp 	проверка едединичного поля
  * @method checkForm 	проверка формы перед отправкой
  * @method showError 	отображение ошибок
  *
@@ -42,7 +42,7 @@ function ValidationRules(){
 function Form(form){
 	this.form = form;
 	this.fields = form.find('input');
-	this.valudationRules = new ValidationRules();
+	this.validationRules = new ValidationRules();
 	this.validationErrors = [];
 	this.init = function(){
 		this.form.submit(checkForm);
@@ -53,7 +53,7 @@ function Form(form){
 		var inp = $(event.target);
 		var rules = $(inp).data('rules');
 			if(rules !== undefined){
-				if(self.valudationRules[rules](inp)){
+				if(self.validationRules[rules](inp)){
 					inp.addClass('success');
 					inp.removeClass('error');
 				}
@@ -64,7 +64,7 @@ function Form(form){
 		for(var i = 0; i < self.fields.length; i++){
 			var rules = $(self.fields[i]).data('rules');
 			if(rules !== undefined){
-				if(!self.valudationRules[rules]($(self.fields[i]))){
+				if(!self.validationRules[rules]($(self.fields[i]))){
 					self.validationErrors.push(self.fields[i]);
 				}
 			}
