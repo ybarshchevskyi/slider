@@ -7,17 +7,17 @@ $(document).ready(function(){
 // Перебор полей через цикл
 
     for(var i=0;i<fields.length;i++){
-        if($(fields[i].data('rules')=='required')){
+        if($(fields[i]).data('rules')=='required'){
             if(!checkRequired($(fields[i]))){
                 Errors.push($(fields[i]));
             }
         }
-        if($(fields[i].data('rules') == 'string_only')){
+        if($(fields[i]).data('rules') == 'string_only'){
             if(!checkStrings($(fields[i]))){
                 Errors.push($(fields[i]));
             }
         }
-        if($(fields[i].data('rules')=='numbers_only')){
+        if($(fields[i]).data('rules')=='numbers_only'){
             if(!checkNumbers($(fields[i]))){
                 Errors.push($(fields[i]));
             }
@@ -55,7 +55,7 @@ function checkRequired(field){
 //Функция, которая проверяет наличие необходимых значения в полях с string_only
 function checkStrings(field){
     var checking = typeof field.val();
-    if(checking!=='string'){
+    if(checking!=='String'){
         return false
     }else{
         return true
