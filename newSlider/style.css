@@ -1,0 +1,44 @@
+#container{
+	width: 1000px;
+	margin: 0 auto;
+	margin-top: 50px;
+}
+#slider_wrap{
+	border: 1px solid black;
+	box-shadow: 0 0 10px 0 black;
+	width: 1000px;
+	height: 400px;
+	position: relative;
+}
+#slider{
+	overflow: visible;
+	position: relative;
+	width: 1000px;
+	height: 400px;
+}
+#slider img{
+	position: absolute;
+	width: 1000px;
+	height: 400px;
+	top: 0px;
+}
+#right,#left{
+    position: absolute;
+}
+#right{
+    width: 30px;
+    height: 30px;
+    background-image: url(img/right.png);
+    top: 160px;
+    left: 1010px;
+}
+#left{
+    width: 30px;
+    height: 30px;
+    background-image: url(img/left.png);
+    top: 160px;
+    right: 1010px;
+}
+#first{
+    z-index: 1000;
+}
