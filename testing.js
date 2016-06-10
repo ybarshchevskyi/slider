@@ -40,10 +40,10 @@ function Slider(Massive){
     var self=this;
     this.init=function(){
         $('.actionbuttons').on('click', function(){
-           var action = $(this).getAttribute('data')
-           if(action=='rowleft'){
+           var action = $(this).attr('id')
+           if(action=='left'){
                self.left();
-           } else if(action=='rowright'){
+           } else if(action=='right'){
                self.right(); 
            }
         })};
