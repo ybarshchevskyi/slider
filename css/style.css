@@ -1,0 +1,74 @@
+.container{
+	width: 1000px;
+	margin: 0 auto;
+	margin-top: 50px;
+}
+#slider_wrap{
+	border: 1px solid black;
+	box-shadow: 0 0 10px 0 black;
+	width: 1000px;
+	height: 400px;
+	position: relative;
+}
+#slider{
+	overflow: hidden;
+	position: relative;
+	width: 1000px;
+	height: 400px;
+}
+#slider img{
+	position: absolute;
+	width: 1000px;
+	height: 400px;
+	top: 0px;
+}
+#left, #right{
+	width: 28px;
+	height: 28px;
+	border-radius: 15px;
+	box-shadow: 0 0 5px 0 black;
+	position: absolute;
+	top: 195px;
+	transition: all ease 0.5s;
+}
+#left{
+	background: url(../img/left.png) no-repeat;
+	left: -15px;
+	background-color: white;
+	background-position: -1px -2px;
+}
+#right{
+	background: url(../img/right.png) no-repeat;
+	right: -15px;
+	background-position: -1px -1px;
+	background-color: white;
+}
+#left:hover, #right:hover{
+	box-shadow: 0 0 10px 0 red;
+	background-color: red;
+	cursor: pointer;
+}
+#slider_count{
+	position: absolute;
+	bottom: 0px;
+	right: 0px;
+	height: 20px;
+	width: 120px;
+}
+a.circle{
+	display: inline-block;
+	margin-right: 5px;
+	width: 10px;
+	height: 10px;
+	border: 1px solid green;
+	background: white;
+	border-radius: 5px;
+	cursor: pointer;
+	transition: all ease 0.5s;
+}
+.circle.active{
+	background: green;
+}
+.circle:hover{
+	box-shadow: 0 0 10px 0 green;
+}
