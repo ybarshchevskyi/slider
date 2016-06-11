@@ -23,18 +23,17 @@
 //}
 
 //Через объект
-
+var newSlider;
 $(document).ready(function(){
 
-newSlider.init();
+  var array1 = ['1.png','2.png','3.png'];
+
+  newSlider = new Slider(array1, 'one');
+  newSlider.init();
 })
 
-var array1 = ['1.png','2.png','3.png'];
-
-var newSlider = new Slider(array1);
-
-
-function Slider(Massive){
+function Slider(Massive, id){
+    var sl = $('#'+id);
     this.massive=Massive;
     this.counter=0;
     var self=this;
@@ -52,7 +51,7 @@ function Slider(Massive){
     this.right = function(){
     if(self.counter!=self.massive.length-1){
         self.counter++;
-        $('.imagebox').attr('src', self.massive[self.counter]); 
+        $(sl).find('.imagebox').attr('src', self.massive[self.counter]); 
     }
     }
     
@@ -60,7 +59,7 @@ function Slider(Massive){
     this.left = function(){
      if(this.counter!=0){
          this.counter--;
-        $('.imagebox').attr('src', this.massive[this.counter]);
+        $(sl).find('.imagebox').attr('src', this.massive[this.counter]);
     }
 }
 }
