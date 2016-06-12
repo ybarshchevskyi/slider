@@ -9,7 +9,7 @@ function Slider (obj){
 //Выстраивание картинок в линию
         for(var i = 0; i<slides.length; i++){
             var temporary = parseInt($(slides[i]).width());
-            $(slides[i]).css(ElemPosition, temporary*i);
+            $(slides[i]).css(ElemPosition, temporary*i+'px');
         }
 //Вешаю обработчик на кнопки управления
         $('.slider-control').on('click', function(){
@@ -22,7 +22,7 @@ function Slider (obj){
         for(var i = 0; i<slides.length; i++){
             var temporary = parseInt($(slides[i]).width());
             var x = parseInt($(slides[i]).css(ElemPosition));
-            $(slides[i]).css(ElemPosition, (x-temporary)+'px');
+            $(slides[i]).css(ElemPosition, (x+temporary)+'px');
         }
     }
 //Метод движения слайдера вправо
@@ -30,7 +30,25 @@ function Slider (obj){
         for(var i = 0; i<slides.length; i++){
             var temporary = parseInt($(slides[i]).width());
             var x = parseInt($(slides[i]).css(ElemPosition));
-            $(slides[i]).css(ElemPosition, (x+temporary)+'px');
+            $(slides[i]).css(ElemPosition, (x-temporary)+'px');
+        }
+    }
+    function getMove (array,button){
+        if(button === undefined){
+            
+        }
+        
+        switch(direction){
+            case : 'moveLeft'
+        {
+                
+                break
+        }
+            case : 'moveRight'
+            {
+                
+                break
+            }
         }
     }
 }
