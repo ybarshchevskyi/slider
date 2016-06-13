@@ -3,10 +3,12 @@ function Slider (obj){
     var self = this;
     var ElemPosition = obj.move;
     var action;
+    var slidesWidth;
     this.init = function(){
 //Выстраивание картинок в линию
         for(var i = 0; i<slides.length; i++){
             var temporary = parseInt($(slides[i]).width());
+            slidesWidth += temporary;
             $(slides[i]).css(ElemPosition, temporary*i+'px');
         }
 //Вешаю обработчик на кнопки управления
