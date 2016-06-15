@@ -4,6 +4,7 @@ function Slider (obj){
     var ElemPosition = obj.move;
     var action;
     var slidesWidth;
+    var autoSlide = obj.auto;
     this.init = function(){
 //Выстраивание картинок в линию
         for(var i = 0; i<slides.length; i++){
@@ -13,12 +14,18 @@ function Slider (obj){
         }
 //Вешаю обработчик на кнопки управления
         $('.slider-control').on('click', function(){
-            var action = $(this).data('action');
+            action = $(this).data('action');
             self[action]();
+// Убрать метод мувлефт и райт и оставить только функцию getPosition (action);            
+
+// Автопрокрутка
+        if(autoSlide == true){
+            var move = setTimeout(self.moveLeft, 3000);
+        }
         });
     }
 this.moveLeft = function(){
-    getPosition(slides, '1');
+    getPosition(slides, action);
 }
 
 this.moveRight = function(){
@@ -30,7 +37,7 @@ this.moveRight = function(){
             var x = parseInt($(array[i]).css(ElemPosition));
             var coord;
         switch(trigger){
-            case '1':   
+            case 'moveLeft':   
                 var coord = (x+temporary)+'px';
                 break;
         
