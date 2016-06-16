@@ -3,49 +3,35 @@ function Slider (obj){
     var self = this;
     var ElemPosition = obj.move;
     var action;
-    var slidesWidth;
     var autoSlide = obj.auto;
     this.init = function(){
 //Выстраивание картинок в линию
         for(var i = 0; i<slides.length; i++){
             var temporary = parseInt($(slides[i]).width());
-            slidesWidth += temporary;
             $(slides[i]).css(ElemPosition, temporary*i+'px');
         }
 //Вешаю обработчик на кнопки управления
         $('.slider-control').on('click', function(){
             action = $(this).data('action');
-            self[action]();
-// Убрать метод мувлефт и райт и оставить только функцию getPosition (action);            
-
-// Автопрокрутка
-        if(autoSlide == true){
-            var move = setTimeout(self.moveLeft, 3000);
-        }
+            getPosition(action);          
         });
     }
-this.moveLeft = function(){
-    getPosition(slides, action);
-}
-
-this.moveRight = function(){
-    getPosition(slides, '2');
-}
-    function getPosition (array, trigger){
-        for(var i = 0; i<array.length; i++){
-            var temporary = parseInt($(array[i]).width());
-            var x = parseInt($(array[i]).css(ElemPosition));
+// Функция, которая двигает слайдер
+    function getPosition (trigger){
+        for(var i = 0; i<slides.length; i++){
+            var temporary = parseInt($(slides[i]).width());
+            var x = parseInt($(slides[i]).css(ElemPosition));
             var coord;
         switch(trigger){
             case 'moveLeft':   
                 var coord = (x+temporary)+'px';
                 break;
         
-            case '2':
+            case 'moveRight':
                 var coord = (x-temporary)+'px';
                 break;
                 }
-             $(array[i]).css(ElemPosition, coord);
+             $(slides[i]).css(ElemPosition, coord);
             }
         }
     }
