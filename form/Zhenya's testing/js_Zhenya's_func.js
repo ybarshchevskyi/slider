@@ -65,9 +65,9 @@ function checkStrings(field){
 //Функция, которая проверяет наличие необходимых значений в полях с numbers_only
 function checkNumbers(field){
     var checking = typeof field.val();
-    if(checking!=='number'){
-        return false
-    }return true
+    if(!is_NaN(+field.val())){
+        return true
+    }return false
 }
 
 

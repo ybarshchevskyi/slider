@@ -1,0 +1,37 @@
+.slider {
+  position: relative;
+}
+.slider-wrap {
+  position: relative;
+  overflow: hidden;
+  z-index: 900;
+  height: 100%;
+  width: 100%;
+}
+.slider-control {
+  position: absolute;
+  top: 50%;
+  z-index: 999;
+}
+.slider-control.left {
+  left: 0;
+  transform: translate(-50%, -50%);
+  width: 35px;
+  height: 35px;
+}
+.slider-control.right {
+  right: 0;
+  transform: translate(50%, -50%);
+}
+.slider-item {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+#one{
+    width: 1000px;
+    height: 400px;
+    margin: 0 auto;
+    margin-top: 50px;
+}
+

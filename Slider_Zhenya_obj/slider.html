@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Zhenya's slider with Alex</title>
+	<link rel="stylesheet" type="text/css" href="css/slider.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+	<script type="text/javascript" src="slider_obj_Zhenya.js"></script>
+</head>
+<body>
+	<div class="slider" id="one">
+		<div class="slider-wrap">
+			<img src="Alex_img/pic1.jpg" class="slider-item">
+			<img src="Alex_img/pic2.jpg" class="slider-item">
+			<img src="Alex_img/pic3.jpg" class="slider-item">
+			<img src="Alex_img/pic4.jpg" class="slider-item">
+			<img src="Alex_img/pic5.jpg" class="slider-item">
+		</div>
+		<img class="slider-control left" data-action="moveLeft" src="left.png">
+		<img class="slider-control right" data-action="moveRight" src="right.png">
+	</div>
+	<script type="text/javascript">
+		
+        var SliderOne = new Slider ({
+            id : 'one',
+            move : 'left',
+            auto : true
+        })
+        SliderOne.init();
+	</script>
+</body>
+</html>
